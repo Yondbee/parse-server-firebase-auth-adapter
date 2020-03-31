@@ -25,7 +25,7 @@ export class FirebaseAuth {
     validateAuthData(authData, options) {
         return getFirebaseAdmin(options).auth().verifyIdToken(authData.access_token)
             .then(function (decodedToken) {
-                if (decodedToken && decodedToken.uid == authData.uid) {
+                if (decodedToken && decodedToken.uid == authData.id) {
                     return;                    
                 }
 
