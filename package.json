@@ -1,6 +1,6 @@
 {
   "name": "parse-server-firebase-auth-adapter",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Authenticate to parse server with Firebase",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parse-server-modules/parse-server-firebase-auth-adapter.git"
+    "url": "git+https://github.com/Yondbee/parse-server-firebase-auth-adapter.git"
   },
   "keywords": [
     "firebase",
@@ -21,11 +21,15 @@
     "auth"
   ],
   "author": "Parse",
+  "contributors": [{
+    "name": "Andrea Santambrogio",
+    "email": "andrea@yondbee.com"
+  }],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/parse-server-modules/parse-server-firebase-auth-adapter/issues"
+    "url": "https://github.com/Yondbee/parse-server-firebase-auth-adapter/issues"
   },
-  "homepage": "https://github.com/parse-server-modules/parse-server-firebase-auth-adapter#readme",
+  "homepage": "https://github.com/Yondbee/parse-server-firebase-auth-adapter#readme",
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",

@@ -4,7 +4,7 @@ Authenticate to parse server with your Firebase account
 ## Getting Started
 ### 1) Install the module
 ```js
-npm i parse-server-firebase-auth-adapter
+npm i Yondbee/parse-server-firebase-auth-adapter
 ```
 ### 2) Add environment variable
 
