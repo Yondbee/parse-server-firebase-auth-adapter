@@ -21,10 +21,12 @@
     "auth"
   ],
   "author": "Parse",
-  "contributors": [{
-    "name": "Andrea Santambrogio",
-    "email": "andrea@yondbee.com"
-  }],
+  "contributors": [
+    {
+      "name": "Andrea Santambrogio",
+      "email": "andrea@yondbee.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Yondbee/parse-server-firebase-auth-adapter/issues"
