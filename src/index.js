@@ -1,22 +1,31 @@
 import * as admin from "firebase-admin";
 import { FirebaseUtil } from './util';
 
-let options = FirebaseUtil.createOptionsFromEnvironment();
+var fbAdmin = null;
 
-admin.initializeApp({
-    credential: admin.credential.cert(require(options.credential)),
-    databaseURL: options.databaseURL
-});
+function getFirebaseAdmin(options) {
+
+    if (fbAdmin != null)
+        return fbAdmin;
+
+    admin.initializeApp({
+        credential: admin.credential.applicationDefault(),
+        databaseURL: options.databaseURL
+    });
+
+    fbAdmin = admin;
+}
 
 export class FirebaseAuth {
 
-    constructor() {
+    constructor(options) {
+        console.log('FirebaseAuth initialized with options', options);
     }
 
     validateAuthData(authData, options) {
-        return admin.auth().verifyIdToken(authData.access_token)
+        return getFirebaseAdmin(options).auth().verifyIdToken(authData.access_token)
             .then(function (decodedToken) {
-                if (decodedToken && decodedToken.uid == authData.id) {
+                if (decodedToken && decodedToken.uid == authData.uid) {
                     return;                    
                 }
 

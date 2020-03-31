@@ -1,34 +1,32 @@
 # Parse-server-firebase-auth-adapter
 Authenticate to parse server with your Firebase account
 
-## How to use it?
+## Getting Started
 ### 1) Install the module
 ```js
-npm i -S parse-server-firebase-auth-adapter
+npm i parse-server-firebase-auth-adapter
 ```
-### 2) Add environment variables
-* Copy the `firebaseAccountKey.json` from Firebase into your folder, maybe root of your project's folder.
-* Add new environment into your `.env` or using export in your terminal.
-```js
-// firebaseAccountKey.json store in root of project.
-FIREBASE_SERVICE_ACCOUNT_KEY = '../../firebaseAccountKey.json'
+### 2) Add environment variable
 
-// URL for connect to Firebase database.
-FIREBASE_DATABASE_URL = "https://SOME_ID.firebaseio.com"
+* Copy the generated service account ".json" file from the Firebase console on the server.
+* Add new environment variable to your deployment.
+```bash
+
+// This points to the JSON service account
+export GOOGLE_APPLICATION_CREDENTIALS = '/opt/secure/firebaseAccountKey.json'
+
 ```
-### 3) Add this module when creating `ParseServer`
-```js
-import { ParseServer } from 'parse-server'
-import firebaseAuthAdapter from 'parse-server-firebase-auth-adapter'
-...
-const parserServer = new ParseServer({
-  ...
-  auth: {
-    firebase: firebaseAuthAdapter
+### 3) Add this module to the config.json of your install
+
+```json
+{
+  "auth": {
+    "module": "parse-server-firebase-auth-adapter",
+    "databaseURL": "https://<DATABASE_NAME>.firebaseio.com"
   }
-})
+}
 ```
-### 4) Using Firebase access token in our project
+### 4) Using Firebase access token in our project via REST APIs
 * Get Parse access token by POST a raw data to `/parse/users`
 ```sh
 curl -X POST \
@@ -39,7 +37,7 @@ curl -X POST \
     "authData": {
     	"firebase": {
     		"access_token": "{{access_token}}",
-    		"id": "{{FirebaseUID}}"
+    		"uid": "{{FirebaseUID}}"
     	}
     }
 }'
