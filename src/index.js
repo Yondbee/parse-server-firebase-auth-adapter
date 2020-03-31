@@ -14,6 +14,7 @@ function getFirebaseAdmin(options) {
     });
 
     fbAdmin = admin;
+    return fbAdmin;
 }
 
 export class FirebaseAuth {
