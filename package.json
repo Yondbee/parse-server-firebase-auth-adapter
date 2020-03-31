@@ -1,5 +1,5 @@
 {
-  "name": "parse-server-firebase-auth-adapter",
+  "name": "@yondbee/parse-server-firebase-auth-adapter",
   "version": "0.1.0",
   "description": "Authenticate to parse server with Firebase",
   "main": "lib/index.js",
