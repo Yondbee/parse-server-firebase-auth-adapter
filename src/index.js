@@ -1,5 +1,4 @@
 import * as admin from "firebase-admin";
-import { FirebaseUtil } from './util';
 
 var fbAdmin = null;
 
